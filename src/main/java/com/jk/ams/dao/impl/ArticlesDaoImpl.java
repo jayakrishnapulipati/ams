@@ -10,6 +10,7 @@ import org.springframework.stereotype.Repository;
 
 import com.jk.ams.dao.ArticlesDao;
 import com.jk.ams.models.Articles;
+import com.jk.ams.models.Images;
 
 @Repository("ArticlesDao")
 public class ArticlesDaoImpl implements ArticlesDao {
@@ -32,6 +33,14 @@ public class ArticlesDaoImpl implements ArticlesDao {
 		query.setParameter("personId", personId);
 		List<Articles> personArticles = query.list();
 		return personArticles;
+	}
+
+	@Override
+	public void uploadFile(String fileName) {
+		// TODO Auto-generated method stub
+		Images images = new Images();
+		images.setImageRelativePath(fileName);
+		sessionFactory.openSession().save(images);
 	}
 
 }

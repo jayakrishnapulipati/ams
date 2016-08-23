@@ -30,4 +30,11 @@ public class ArticlesServiceImpl implements ArticlesService {
 		return articlesDao.getPersonArticles(personId);
 	}
 
+
+	@Override
+	public void uploadFile(String fileName) {
+		// TODO Auto-generated method stub
+		articlesDao.uploadFile(fileName);
+	}
+
 }

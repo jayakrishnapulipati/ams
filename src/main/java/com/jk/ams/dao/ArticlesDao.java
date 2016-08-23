@@ -9,4 +9,6 @@ public interface ArticlesDao {
 	public List<Articles> getListOfArticles();
 
 	public List<Articles> getPersonArticles(Integer personId);
+	
+	public void uploadFile(String fileName);
 }
