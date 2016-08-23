@@ -96,3 +96,6 @@ target/test-classes/log4j.xml
 .project
 target/maven-archiver/pom.properties
 *.class
+target/classes/.gitignore
+target/m2e-wtp/web-resources/.gitignore
+target/test-classes/.gitignore
