@@ -46,31 +46,20 @@ public class ArticlesController {
 		System.out.println("Received file: " + fileName);
 		Map<String, String> map = new HashMap<String, String>();
 		if (fileName != null) {
-//			fileName = FileUploadHelper.uploadFile(filePath, fileUpload);
-			
 			try {
 				articlesService.uploadFile(fileName);
 				map.put("success", Constants.uploadSuccess);
-				map.put("filePath", filePath+fileName);
-				
+				map.put("filePath", filePath + fileName);
+
 			} catch (Exception e) {
 				// TODO: handle exception
 				e.printStackTrace();
 				map.put("error", Constants.uploadError);
 			}
-			
+
 		}
-		
+
 		return map;
 
 	}
-
-	/*
-	 * @RequestMapping(value = "/{personId}/personArticles", method =
-	 * RequestMethod.GET) public Object getPersonArticles(@PathVariable Integer
-	 * personId){ System.out.println("person id : ===>"+personId);
-	 * List<Articles> personArticles =
-	 * articlesService.getPersonArtiles(personId); return personArticles; }
-	 */
-
 }
