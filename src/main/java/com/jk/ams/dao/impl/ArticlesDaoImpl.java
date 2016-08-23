@@ -36,10 +36,8 @@ public class ArticlesDaoImpl implements ArticlesDao {
 	}
 
 	@Override
-	public void uploadFile(String fileName) {
+	public void uploadFile(Images images) {
 		// TODO Auto-generated method stub
-		Images images = new Images();
-		images.setImageRelativePath(fileName);
 		sessionFactory.openSession().save(images);
 	}
 

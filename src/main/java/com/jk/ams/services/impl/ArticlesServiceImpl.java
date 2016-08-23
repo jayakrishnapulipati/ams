@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.jk.ams.dao.ArticlesDao;
 import com.jk.ams.models.Articles;
+import com.jk.ams.models.Images;
 import com.jk.ams.services.ArticlesService;
 
 @Service("ArticlesService")
@@ -32,9 +33,9 @@ public class ArticlesServiceImpl implements ArticlesService {
 
 
 	@Override
-	public void uploadFile(String fileName) {
+	public void uploadFile(Images images) {
 		// TODO Auto-generated method stub
-		articlesDao.uploadFile(fileName);
+		articlesDao.uploadFile(images);
 	}
 
 }

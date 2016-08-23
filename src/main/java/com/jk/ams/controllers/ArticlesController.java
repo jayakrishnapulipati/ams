@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.jk.ams.dto.FileUpload;
 import com.jk.ams.models.Articles;
+import com.jk.ams.models.Images;
 import com.jk.ams.services.ArticlesService;
 import com.jk.ams.utils.Constants;
 import com.jk.ams.utils.FileUploadHelper;
@@ -45,9 +46,12 @@ public class ArticlesController {
 
 		System.out.println("Received file: " + fileName);
 		Map<String, String> map = new HashMap<String, String>();
+
+		Images images = new Images();
+		images.setImageRelativePath(fileName);
 		if (fileName != null) {
 			try {
-				articlesService.uploadFile(fileName);
+				articlesService.uploadFile(images);
 				map.put("success", Constants.uploadSuccess);
 				map.put("filePath", filePath + fileName);
 
